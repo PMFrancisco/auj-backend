@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2",
+    "name": "Bob Johnson Nuevo",
+    "email": "bob.johnson@example.com",
+    "joinedDate": "2023-02-20"
+  },
+  {
+    "id": "4",
+    "name": "Diana Prince",
+    "email": "diana.prince@example.com",
+    "joinedDate": "2023-04-12"
+  },
+  {
+    "id": "5",
+    "name": "Eve Adams",
+    "email": "eve.adams@example.com",
+    "joinedDate": "2023-05-25"
+  },
+  {
+    "id": "user-1723369685461",
+    "name": "Juan Pérez Actualizado",
+    "email": "correo.existente@example.com",
+    "joinedDate": "2024-08-11T09:48:05.461Z"
+  }
+]
