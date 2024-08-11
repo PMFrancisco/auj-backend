@@ -1,82 +1,82 @@
 [
-    {
-        "id": "book-1",
-        "title": "Cien años de soledad",
-        "author": "Gabriel García Márquez",
-        "publishedDate": "1967-06-05",
-        "isbn": "978-0060883287",
-        "genre": "Realismo mágico"
-    },
-    {
-        "id": "book-2",
-        "title": "Don Quijote de la Mancha",
-        "author": "Miguel de Cervantes",
-        "publishedDate": "1605-01-16",
-        "isbn": "978-8491051132",
-        "genre": "Novela"
-    },
-    {
-        "id": "book-3",
-        "title": "1984",
-        "author": "George Orwell",
-        "publishedDate": "1949-06-08",
-        "isbn": "978-0451524935",
-        "genre": "Distopía"
-    },
-    {
-        "id": "book-4",
-        "title": "El Hobbit",
-        "author": "J.R.R. Tolkien",
-        "publishedDate": "1937-09-21",
-        "isbn": "978-0547928227",
-        "genre": "Fantasía"
-    },
-    {
-        "id": "book-5",
-        "title": "Orgullo y prejuicio",
-        "author": "Jane Austen",
-        "publishedDate": "1813-01-28",
-        "isbn": "978-1503290563",
-        "genre": "Romántico"
-    },
-    {
-        "id": "book-6",
-        "title": "El Gran Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "publishedDate": "1925-04-10",
-        "isbn": "978-0743273565",
-        "genre": "Novela"
-    },
-    {
-        "id": "book-7",
-        "title": "Matar a un ruiseñor",
-        "author": "Harper Lee",
-        "publishedDate": "1960-07-11",
-        "isbn": "978-0060935467",
-        "genre": "Drama"
-    },
-    {
-        "id": "book-8",
-        "title": "Los pilares de la tierra",
-        "author": "Ken Follett",
-        "publishedDate": "1989-08-01",
-        "isbn": "978-0451166882",
-        "genre": "Histórico"
-    },
-    {
-        "id": "book-9",
-        "title": "La sombra del viento",
-        "author": "Carlos Ruiz Zafón",
-        "publishedDate": "2001-04-17",
-        "isbn": "978-8408200095",
-        "genre": "Misterio"
-    },
-    {
-        "id": "book-10",
-        "title": "Los juegos del hambre",
-        "author": "Suzanne Collins",
-        "publishedDate": "2008-09-14",
-        "isbn": "978-0439023481",
-        "genre": "Ciencia ficción"
-    }
+  {
+    "id": "book-1",
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "publishedDate": "1967-06-05",
+    "isbn": "978-0060883287",
+    "genre": "Realismo mágico"
+  },
+  {
+    "id": "book-2",
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "publishedDate": "1605-01-16",
+    "isbn": "978-8491051132",
+    "genre": "Novela"
+  },
+  {
+    "id": "book-3",
+    "title": "1984",
+    "author": "George Orwell",
+    "publishedDate": "1949-06-08",
+    "isbn": "978-0451524935",
+    "genre": "Distopía"
+  },
+  {
+    "id": "book-4",
+    "title": "El Hobbit",
+    "author": "J.R.R. Tolkien",
+    "publishedDate": "1937-09-21",
+    "isbn": "978-0547928227",
+    "genre": "Fantasía"
+  },
+  {
+    "id": "book-5",
+    "title": "Orgullo y prejuicio",
+    "author": "Jane Austen",
+    "publishedDate": "1813-01-28",
+    "isbn": "978-1503290563",
+    "genre": "Romántico"
+  },
+  {
+    "id": "book-6",
+    "title": "El Gran Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "publishedDate": "1925-04-10",
+    "isbn": "978-0743273565",
+    "genre": "Novela"
+  },
+  {
+    "id": "book-7",
+    "title": "Matar a un ruiseñor",
+    "author": "Harper Lee",
+    "publishedDate": "1960-07-11",
+    "isbn": "978-0060935467",
+    "genre": "Drama"
+  },
+  {
+    "id": "book-8",
+    "title": "Los pilares de la tierra",
+    "author": "Ken Follett",
+    "publishedDate": "1989-08-01",
+    "isbn": "978-0451166882",
+    "genre": "Histórico"
+  },
+  {
+    "id": "book-9",
+    "title": "La sombra del viento",
+    "author": "Carlos Ruiz Zafón",
+    "publishedDate": "2001-04-17",
+    "isbn": "978-8408200095",
+    "genre": "Misterio"
+  },
+  {
+    "id": "book-10",
+    "title": "Los juegos del hambre",
+    "author": "Suzanne Collins",
+    "publishedDate": "2008-09-14",
+    "isbn": "978-0439023481",
+    "genre": "Ciencia ficción"
+  }
 ]
