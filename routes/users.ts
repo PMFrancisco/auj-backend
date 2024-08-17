@@ -14,15 +14,15 @@ const writeJSONFile = (filePath: string, data: any) => {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 };
 
+const users = readJSONFile(usersFilePath);
+
 // Get all users
 router.get('/', (req: Request, res: Response) => {
-    const users = readJSONFile(usersFilePath);
     res.json(users);
 });
 
 // Get user by ID
 router.get('/:id', (req: Request, res: Response) => {
-    const users = readJSONFile(usersFilePath);
     const user = users.find((u: any) => u.id === req.params.id);
     if (user) {
         res.json(user);
@@ -46,8 +46,6 @@ router.post('/', (req: Request, res: Response) => {
         return res.status(400).send('Name and email are required');
     }
 
-    // Read current users
-    const users = readJSONFile(usersFilePath);
 
     // Check for duplicate email
     const emailExists = users.some((u: any) => u.email === newUser.email);
@@ -70,9 +68,6 @@ router.put('/:id', (req: Request, res: Response) => {
     if (!name && !email) {
         return res.status(400).send('At least one field (name or email) must be provided for update');
     }
-
-    // Read current users
-    const users = readJSONFile(usersFilePath);
 
     // Find user index
     const userIndex = users.findIndex((u: any) => u.id === id);

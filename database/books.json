@@ -4,48 +4,60 @@
     "title": "Cien años de soledad",
     "author": "Gabriel García Márquez",
     "publishedDate": "1967-06-05",
-    "isbn": "978-0060883287",
-    "genre": "Realismo mágico"
+    "isbn": "978-0307474728",
+    "genre": "Realismo mágico",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-2",
-    "title": "Don Quijote de la Mancha",
-    "author": "Miguel de Cervantes",
-    "publishedDate": "1605-01-16",
-    "isbn": "978-8491051132",
-    "genre": "Novela"
-  },
-  {
-    "id": "book-3",
     "title": "1984",
     "author": "George Orwell",
     "publishedDate": "1949-06-08",
     "isbn": "978-0451524935",
-    "genre": "Distopía"
+    "genre": "Distopía",
+    "lentTo": null,
+    "lentDate": null
+  },
+  {
+    "id": "book-3",
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "publishedDate": "1605-01-16",
+    "isbn": "978-8491051549",
+    "genre": "Aventura",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-4",
-    "title": "El Hobbit",
-    "author": "J.R.R. Tolkien",
-    "publishedDate": "1937-09-21",
-    "isbn": "978-0547928227",
-    "genre": "Fantasía"
+    "title": "El Principito",
+    "author": "Antoine de Saint-Exupéry",
+    "publishedDate": "1943-04-06",
+    "isbn": "978-0156012195",
+    "genre": "Fábula",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-5",
-    "title": "Orgullo y prejuicio",
-    "author": "Jane Austen",
-    "publishedDate": "1813-01-28",
-    "isbn": "978-1503290563",
-    "genre": "Romántico"
+    "title": "El señor de los anillos: La comunidad del anillo",
+    "author": "J.R.R. Tolkien",
+    "publishedDate": "1954-07-29",
+    "isbn": "978-0618574940",
+    "genre": "Fantasía",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-6",
-    "title": "El Gran Gatsby",
-    "author": "F. Scott Fitzgerald",
-    "publishedDate": "1925-04-10",
-    "isbn": "978-0743273565",
-    "genre": "Novela"
+    "title": "Crimen y castigo",
+    "author": "Fiódor Dostoyevski",
+    "publishedDate": "1866-01-01",
+    "isbn": "978-0140449136",
+    "genre": "Ficción psicológica",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-7",
@@ -53,30 +65,38 @@
     "author": "Harper Lee",
     "publishedDate": "1960-07-11",
     "isbn": "978-0060935467",
-    "genre": "Drama"
+    "genre": "Ficción histórica",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-8",
-    "title": "Los pilares de la tierra",
-    "author": "Ken Follett",
-    "publishedDate": "1989-08-01",
-    "isbn": "978-0451166882",
-    "genre": "Histórico"
+    "title": "El amor en los tiempos del cólera",
+    "author": "Gabriel García Márquez",
+    "publishedDate": "1985-03-06",
+    "isbn": "978-0307389732",
+    "genre": "Romance",
+    "lentTo": null,
+    "lentDate": null
   },
   {
     "id": "book-9",
-    "title": "La sombra del viento",
-    "author": "Carlos Ruiz Zafón",
-    "publishedDate": "2001-04-17",
-    "isbn": "978-8408200095",
-    "genre": "Misterio"
+    "title": "Orgullo y prejuicio",
+    "author": "Jane Austen",
+    "publishedDate": "1813-01-28",
+    "isbn": "978-0141439518",
+    "genre": "Romance",
+    "lentTo": null,
+    "lentDate": null
   },
   {
-    "id": "book-10",
+    "id": "book-1723882918602",
     "title": "Los juegos del hambre",
     "author": "Suzanne Collins",
     "publishedDate": "2008-09-14",
     "isbn": "978-0439023481",
-    "genre": "Ciencia ficción"
+    "genre": "Ciencia ficción",
+    "lentTo": null,
+    "lentDate": null
   }
 ]

@@ -1,15 +1,9 @@
 [
   {
-    "id": "2",
     "name": "Bob Johnson Nuevo",
     "email": "bob.johnson@example.com",
+    "id": "2",
     "joinedDate": "2023-02-20"
-  },
-  {
-    "id": "5",
-    "name": "Eve Adams Johns 2",
-    "email": "eve.adams@example.com",
-    "joinedDate": "2023-05-25"
   },
   {
     "name": "Juan Pérez Actualizado",
@@ -34,5 +28,11 @@
     "email": "pedro.carmona@example.com",
     "id": "user-1723372066521",
     "joinedDate": "2024-08-11T10:27:46.521Z"
+  },
+  {
+    "name": "Eve Adams Johns 2",
+    "email": "eve.adams@example.com",
+    "id": "user-1723882110289",
+    "joinedDate": "2024-08-17T08:08:30.289Z"
   }
 ]

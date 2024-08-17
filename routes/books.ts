@@ -4,6 +4,7 @@ import path from "path";
 
 const router = express.Router();
 const booksFilePath = path.join(__dirname, "../database/books.json");
+const usersFilePath = path.join(__dirname, "../database/users.json");
 
 // Helper functions
 const readJSONFile = (filePath: string) => {
@@ -14,11 +15,47 @@ const writeJSONFile = (filePath: string, data: any) => {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
 };
 
-const books = readJSONFile(booksFilePath);
+let books = readJSONFile(booksFilePath);
+let users = readJSONFile(usersFilePath);
 
 // Get all books
 router.get("/", (req: Request, res: Response) => {
   res.json(books);
+});
+
+// Lend a book to a user
+router.post("/:id/lend", (req: Request, res: Response) => {
+  const { userId } = req.body;
+  const { id } = req.params;
+
+  // Find the book by ID
+  const bookIndex = books.findIndex((b: any) => b.id === id);
+  if (bookIndex === -1) {
+    return res.status(404).send("Book not found");
+  }
+
+  // Check if the book is already lent out
+  if (books[bookIndex].lentTo) {
+    return res.status(400).send("Book is already lent out");
+  }
+
+  // Check if the user exists
+  const user = users.find((u: any) => u.id === userId);
+  if (!user) {
+    return res.status(404).send("User not found");
+  }
+
+  // Lend the book to the user
+  books[bookIndex].lentTo = userId;
+  books[bookIndex].lentDate = new Date().toISOString(); // Record the date when the book was lent out
+
+  // Update the books.json file
+  writeJSONFile(booksFilePath, books);
+
+  res.status(200).json({
+    message: `Book "${books[bookIndex].title}" has been lent to ${user.name}`,
+    book: books[bookIndex],
+  });
 });
 
 // Get book by ID
@@ -48,10 +85,9 @@ router.post("/", (req: Request, res: Response) => {
     publishedDate: publishedDate || null, // Optional
     isbn: isbn || null, // Optional
     genre: genre || null, // Optional
+    lentTo: null, // Not lent to anyone initially
+    lentDate: null, // No lent date initially
   };
-
-  // Read the existing books
-  const books = readJSONFile(booksFilePath);
 
   // Add the new book to the list
   books.push(newBook);
