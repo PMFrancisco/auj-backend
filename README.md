@@ -155,6 +155,16 @@ Inicia el servidor
 | `isbn`      | `string` | **Opcional**. ISBN del libro actualizado |
 | `genre`      | `string` | **Opcional**. Género del libro actualizado |
 
+#### Prestar un libro a un usuario
+
+```http
+  POST /books/${id}/lend
+```
+
+| Parametro | Tipo     | Descripcion                |
+| :-------- | :------- | :------------------------- |
+| `userId`      | `string` | **Requerido**. Id del usuario a quien se prestará el libro |
+
 #### Elimina un libro
 
 ```http
