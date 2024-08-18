@@ -58,6 +58,46 @@ router.post("/:id/lend", (req: Request, res: Response) => {
   });
 });
 
+// Return a book by a user
+router.post("/:id/return", (req: Request, res: Response) => {
+  const { userId } = req.body;
+  const { id } = req.params;
+
+  // Find the book by ID
+  const bookIndex = books.findIndex((b: any) => b.id === id);
+  if (bookIndex === -1) {
+    return res.status(404).send("Book not found");
+  }
+
+  const book = books[bookIndex];
+
+  // Check if the book is currently lent out
+  if (!book.lentTo) {
+    return res.status(400).send("Book is not currently lent out");
+  }
+
+  // Check if the user is the one who borrowed the book
+  if (book.lentTo !== userId) {
+    return res.status(403).send("User does not match the borrower");
+  }
+
+  // Return the book
+  book.lentTo = null;
+  book.returnDate = new Date().toISOString(); // Record the date when the book was returned
+
+  // Update the books.json file
+  writeJSONFile(booksFilePath, books);
+
+  res.status(200).json({
+    message: `Book "${book.title}" has been returned by ${users.find((u: any) => u.id === userId)?.name}`,
+    book: {
+      id: book.id,
+      title: book.title,
+      lentTo: book.lentTo,
+    },
+  });
+});
+
 // Get book by ID
 router.get("/:id", (req: Request, res: Response) => {
   const book = books.find((b: any) => b.id === req.params.id);
