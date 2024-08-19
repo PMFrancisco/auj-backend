@@ -34,8 +34,10 @@ router.post("/:id/lend", (req: Request, res: Response) => {
     return res.status(404).send("Book not found");
   }
 
+  const book = books[bookIndex];
+
   // Check if the book is already lent out
-  if (books[bookIndex].lentTo) {
+  if (book.lentTo) {
     return res.status(400).send("Book is already lent out");
   }
 
@@ -46,15 +48,15 @@ router.post("/:id/lend", (req: Request, res: Response) => {
   }
 
   // Lend the book to the user
-  books[bookIndex].lentTo = userId;
-  books[bookIndex].lentDate = new Date().toISOString(); // Record the date when the book was lent out
+  book.lentTo = userId;
+  book.lentDate = new Date().toISOString(); // Record the date when the book was lent out
 
   // Update the books.json file
   writeJSONFile(booksFilePath, books);
 
   res.status(200).json({
-    message: `Book "${books[bookIndex].title}" has been lent to ${user.name}`,
-    book: books[bookIndex],
+    message: `Book "${book.title}" has been lent to ${user.name}`,
+    book: book,
   });
 });
 
@@ -89,7 +91,9 @@ router.post("/:id/return", (req: Request, res: Response) => {
   writeJSONFile(booksFilePath, books);
 
   res.status(200).json({
-    message: `Book "${book.title}" has been returned by ${users.find((u: any) => u.id === userId)?.name}`,
+    message: `Book "${book.title}" has been returned by ${
+      users.find((u: any) => u.id === userId)?.name
+    }`,
     book: {
       id: book.id,
       title: book.title,

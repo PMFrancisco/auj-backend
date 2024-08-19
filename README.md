@@ -165,6 +165,16 @@ Inicia el servidor
 | :-------- | :------- | :------------------------- |
 | `userId`      | `string` | **Requerido**. Id del usuario a quien se prestará el libro |
 
+#### Devolver un libro de un usuario
+
+```http
+  POST /books/${id}/return
+```
+
+| Parametro | Tipo     | Descripcion                |
+| :-------- | :------- | :------------------------- |
+| `userId`      | `string` | **Requerido**. Id del usuario que devuelve el libro |
+
 #### Elimina un libro
 
 ```http
