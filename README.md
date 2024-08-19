@@ -184,3 +184,7 @@ Inicia el servidor
 | Parametro | Tipo     | Descripcion                |
 | :-------- | :------- | :------------------------- |
 | `id`      | `string` | **Requerido**. Id del libro a eliminar |
+
+## Contribuciones
+
+[Ekaterina Kushnir](https://github.com/katiaku) - Resolución de la [Issue 1](https://github.com/PMFrancisco/auj-backend/issues/1), consistente en crear un Endpoint para la devolución de librosl.
