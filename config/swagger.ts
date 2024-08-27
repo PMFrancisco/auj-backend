@@ -8,13 +8,8 @@ const options = {
       version: '1.0.0',
       description: 'A library API',
     },
-    servers: [
-      {
-        url: 'http://localhost:3000',
-      },
-    ],
   },
-  apis: ['./src/routes/*.ts'],
+  apis: ['./routes/*.ts'],
 };
 
 const swaggerDocs = swaggerJsdoc(options);

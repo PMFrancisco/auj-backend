@@ -18,12 +18,70 @@ const writeJSONFile = (filePath: string, data: any) => {
 let books = readJSONFile(booksFilePath);
 let users = readJSONFile(usersFilePath);
 
-// Get all books
+/**
+ * @swagger
+ * tags:
+ *   name: Books
+ *   description: Book management API
+ */
+
+/**
+ * @swagger
+ * /books:
+ *   get:
+ *     summary: Get all books
+ *     tags: [Books]
+ *     responses:
+ *       200:
+ *         description: List of all books
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                   title:
+ *                     type: string
+ *                   author:
+ *                     type: string
+ */
+
 router.get("/", (req: Request, res: Response) => {
   res.json(books);
 });
 
-// Lend a book to a user
+/**
+ * @swagger
+ * /books/{id}/lend:
+ *   post:
+ *     summary: Lend a book to a user
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *       - in: body
+ *         name: userId
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             userId:
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: The book has been lent out
+ *       400:
+ *         description: Book is already lent out or invalid request
+ *       404:
+ *         description: Book or user not found
+ */
+
 router.post("/:id/lend", (req: Request, res: Response) => {
   const { userId } = req.body;
   const { id } = req.params;
@@ -60,7 +118,37 @@ router.post("/:id/lend", (req: Request, res: Response) => {
   });
 });
 
-// Return a book by a user
+/**
+ * @swagger
+ * /books/{id}/return:
+ *   post:
+ *     summary: Return a book by a user
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *       - in: body
+ *         name: userId
+ *         required: true
+ *         schema:
+ *           type: object
+ *           properties:
+ *             userId:
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: The book has been returned
+ *       400:
+ *         description: Book is not currently lent out or invalid request
+ *       403:
+ *         description: User does not match the borrower
+ *       404:
+ *         description: Book not found
+ */
+
 router.post("/:id/return", (req: Request, res: Response) => {
   const { userId } = req.body;
   const { id } = req.params;
@@ -102,7 +190,25 @@ router.post("/:id/return", (req: Request, res: Response) => {
   });
 });
 
-// Get book by ID
+/**
+ * @swagger
+ * /books/{id}:
+ *   get:
+ *     summary: Get a book by ID
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: The book details
+ *       404:
+ *         description: Book not found
+ */
+
 router.get("/:id", (req: Request, res: Response) => {
   const book = books.find((b: any) => b.id === req.params.id);
   if (book) {
@@ -112,7 +218,36 @@ router.get("/:id", (req: Request, res: Response) => {
   }
 });
 
-// Create a new book
+/**
+ * @swagger
+ * /books:
+ *   post:
+ *     summary: Create a new book
+ *     tags: [Books]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               author:
+ *                 type: string
+ *               publishedDate:
+ *                 type: string
+ *               isbn:
+ *                 type: string
+ *               genre:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: The newly created book
+ *       400:
+ *         description: Title and author are required
+ */
+
 router.post("/", (req: Request, res: Response) => {
   const { title, author, publishedDate, isbn, genre } = req.body;
 
@@ -141,7 +276,42 @@ router.post("/", (req: Request, res: Response) => {
   res.status(201).json(newBook);
 });
 
-// Update book by ID
+/**
+ * @swagger
+ * /books/{id}:
+ *   put:
+ *     summary: Update a book by ID
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               author:
+ *                 type: string
+ *               publishedDate:
+ *                 type: string
+ *               isbn:
+ *                 type: string
+ *               genre:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: The updated book details
+ *       404:
+ *         description: Book not found
+ */
+
 router.put("/:id", (req: Request, res: Response) => {
   const { id } = req.params;
   const { title, author, publishedDate, isbn, genre } = req.body;
@@ -162,7 +332,25 @@ router.put("/:id", (req: Request, res: Response) => {
   res.json(updatedBook);
 });
 
-// Delete book by ID
+/**
+ * @swagger
+ * /books/{id}:
+ *   delete:
+ *     summary: Delete a book by ID
+ *     tags: [Books]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       204:
+ *         description: Book deleted
+ *       404:
+ *         description: Book not found
+ */
+
 router.delete("/:id", (req: Request, res: Response) => {
   let books = readJSONFile(booksFilePath);
   books = books.filter((b: any) => b.id !== req.params.id);
