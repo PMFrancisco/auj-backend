@@ -16,7 +16,7 @@ Este proyecto es una aplicación de biblioteca en línea que permite gestionar u
 - **Node.js:** Entorno de ejecución para JavaScript del lado del servidor.
 - **Express:** Framework para aplicaciones web en Node.js.
 - **TypeScript:** Superset de JavaScript con tipado estático.
-- **Swagger:** Documentación de API.
+- **Swagger:** Documentación de API, puede consultarse en /api-docs.
 - **JSON:** Formato de almacenamiento de datos.
 ## Lanzar en local
 
